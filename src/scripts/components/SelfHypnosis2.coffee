@@ -2,7 +2,7 @@ NoiseSourceNode = require './NoiseSourceNode'
 BinauralSourceNode = require './BinauralSourceNode'
 GainModulatorNode = require './GainModulatorNode'
 
-class Player
+class SelfHypnosis2
   constructor: (@context) ->
     @time = 0
     @plannedTime = 0
@@ -121,4 +121,4 @@ class Player
     @binaural4Gain.disconnect @gain
     @binaural4.disconnect @binaural4Gain
 
-module.exports = Player
+module.exports = SelfHypnosis2

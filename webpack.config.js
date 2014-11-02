@@ -30,29 +30,14 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx', '.coffee'],
+    extensions: ['', '.js', '.coffee'],
     modulesDirectories: ['web_modules', 'node_modules', 'src/bower_components']
   },
 
   module: {
-    preLoaders: [{
-      test: '\\.js$',
-      exclude: 'node_modules',
-      loader: 'jshint'
-    }],
-
     loaders: [{
       test: /\.coffee$/,
       loader: 'coffee-loader'
-    }, {
-      test: /\.jsx$/,
-      loader: 'react-hot!jsx-loader?harmony'
-    }, {
-      test: /\.css$/,
-      loader: 'style-loader!css-loader'
-    }, {
-      test: /\.(png|jpg)$/,
-      loader: 'url-loader?limit=8192'
     }, {
       test: /[\\\/]bower_components[\\\/]modernizr[\\\/]modernizr\.js$/,
       loader: 'imports?this=>window!exports?window.Modernizr'

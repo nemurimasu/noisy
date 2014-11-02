@@ -1,18 +1,18 @@
 'use strict';
 
 describe('Main', function () {
-  var NoisyApp, component;
+  var Demo, component;
 
   beforeEach(function () {
     var container = document.createElement('div');
     container.id = 'content';
     document.body.appendChild(container);
 
-    NoisyApp = require('../../../src/scripts/components/NoisyApp.coffee');
-    component = NoisyApp();
+    Demo = require('../../../src/scripts/components/Demo.coffee');
+    component = Demo();
   });
 
-  it('should create a new instance of NoisyApp', function () {
+  it('should create a new instance of Demo', function () {
     expect(component).toBeDefined();
   });
 });

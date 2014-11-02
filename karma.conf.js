@@ -15,28 +15,13 @@ module.exports = function (config) {
     webpack: {
       cache: true,
       resolve: {
-        extensions: ['', '.js', '.jsx', '.coffee'],
+        extensions: ['', '.js', '.coffee'],
         modulesDirectories: ['web_modules', 'node_modules', 'src/bower_components']
       },
       module: {
         loaders: [{
           test: /\.coffee$/,
           loader: 'coffee-loader'
-        }, {
-          test: /\.css$/,
-          loader: 'style!css'
-        }, {
-          test: /\.gif/,
-          loader: 'url-loader?limit=10000&mimetype=image/gif'
-        }, {
-          test: /\.jpg/,
-          loader: 'url-loader?limit=10000&mimetype=image/jpg'
-        }, {
-          test: /\.png/,
-          loader: 'url-loader?limit=10000&mimetype=image/png'
-        }, {
-          test: /\.jsx$/,
-          loader: 'jsx-loader'
         }, {
           test: /[\\\/]bower_components[\\\/]modernizr[\\\/]modernizr\.js$/,
           loader: 'imports?this=>window!exports?window.Modernizr'
