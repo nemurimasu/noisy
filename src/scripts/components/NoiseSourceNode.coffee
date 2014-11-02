@@ -8,6 +8,8 @@ class NoiseSourceNode
       for channel in [0..1]
         data = audioProcessingEvent.outputBuffer.getChannelData channel
         data[i] = 2 * Math.random() - 1 for i in [0...data.length]
+      # suppress return value generation
+      undefined
 
     jsSourceUtils.wrap this, @node
 

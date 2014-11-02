@@ -12,7 +12,8 @@ process = (audioProcessingEvent) ->
     beatHalf = 0.5 * beatFrequencyValues[i]
     leftFrequencyValues[i] = audibleFrequencyValues[i] - beatHalf
     rightFrequencyValues[i] = audibleFrequencyValues[i] + beatHalf
-  audioProcessingEvent # supress useless return value array generation by explicitly returning this
+  # supress useless return value array generation
+  undefined
 
 class BinauralSourceNode
   constructor: (@context) ->
@@ -31,11 +32,6 @@ class BinauralSourceNode
     @right.frequency.value = 0.0
     @merge = @context.createChannelMerger 2
 
-    #for node in [@constant, @audibleFrequencyNode, @beatFrequencyNode, @left, @right]
-      #node.channelCount = 1
-      #node.channelCountMode = 'explicit'
-      #node.channelInterpretation = 'discrete'
-
     @constant.connect @audibleFrequencyNode
     @constant.connect @beatFrequencyNode
     @audibleFrequencyNode.connect @inputMerge, 0, 0
@@ -52,18 +48,18 @@ class BinauralSourceNode
     jsSourceUtils.wrap this, @merge
 
     Object.defineProperty this, 'type',
-      get: () ->
+      get: =>
         @left.type
-      set: (v) ->
+      set: (v) =>
         @left.type = v
         @right.type = v
 
     Object.defineProperty this, 'audibleFrequency',
-      get: () ->
+      get: =>
         @audibleFrequencyNode.gain
 
     Object.defineProperty this, 'beatFrequency',
-      get: () ->
+      get: =>
         @beatFrequencyNode.gain
 
   start: (args...) ->

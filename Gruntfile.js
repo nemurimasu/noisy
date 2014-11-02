@@ -77,6 +77,20 @@ module.exports = function (grunt) {
           ]
         }]
       }
+    },
+
+    coffeelint: {
+      src: ['src/scripts/**/*.coffee'],
+      options: {
+        configFile: 'coffeelint.json'
+      }
+    },
+
+    coffee_jshint: {
+      src: ['src/scripts/**/*.coffee'],
+      options: {
+        jshintOptions: ['browser', 'node']
+      }
     }
   });
 
@@ -93,5 +107,5 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', ['clean', 'webpack']);
 
-  grunt.registerTask('default', ['build']);
+  grunt.registerTask('default', ['coffeelint', 'coffee_jshint', 'build']);
 };

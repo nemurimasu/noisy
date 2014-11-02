@@ -48,7 +48,7 @@ class SelfHypnosis2
     @binaural4Gain = @context.createGain()
     @binaural4Gain.gain.value = 0.25
 
-  play: () ->
+  play: ->
     console.log 'playing'
     @startClock = @context.currentTime
     startTime = @startClock - @time
@@ -63,7 +63,8 @@ class SelfHypnosis2
 
     @noiseGainModulator.frequency.cancelScheduledValues startTime
     @noiseGainModulator.frequency.setValueAtTime 1, startTime
-    @noiseGainModulator.frequency.linearRampToValueAtTime 2.0 / 3.0, startTime + 15 * 60
+    @noiseGainModulator.frequency.linearRampToValueAtTime 2.0 / 3.0,
+      startTime + 15 * 60
 
     @gain.connect @context.destination
     @gainModulator.connect @gain
@@ -91,7 +92,7 @@ class SelfHypnosis2
     @binaural3.start()
     @binaural4.start()
 
-  stop: () ->
+  stop: ->
     console.log 'stopping'
     @time = @context.currentTime - @startClock
 

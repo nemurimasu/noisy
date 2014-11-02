@@ -3,7 +3,8 @@ audioConfig = require './audioConfig'
 
 class ConstantSourceNode
   constructor: (@context, value) ->
-    buffer = @context.createBuffer 1, audioConfig.bufferSize, @context.sampleRate
+    buffer = @context.createBuffer 1, audioConfig.bufferSize,
+      @context.sampleRate
     data = buffer.getChannelData 0
 
     if data.fill

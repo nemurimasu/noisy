@@ -1,23 +1,23 @@
 module.exports =
   wrap: (jsNode, nativeNode) ->
     Object.defineProperty jsNode, 'channelCount',
-      get: () ->
+      get: ->
         nativeNode.channelCount
     Object.defineProperty jsNode, 'channelCountMode',
-      get: () ->
+      get: ->
         nativeNode.channelCountMode
       set: (v) ->
         nativeNode.channelCountMode = v
     Object.defineProperty jsNode, 'channelInterpretation',
-      get: () ->
+      get: ->
         nativeNode.channelInterpretation
       set: (v) ->
         nativeNode.channelInterpretation = v
     Object.defineProperty jsNode, 'numberOfInputs',
-      get: () ->
+      get: ->
         0
     Object.defineProperty jsNode, 'numberOfOutputs',
-      get: () ->
+      get: ->
         nativeNode.numberOfOutputs
 
     jsNode.connect = nativeNode.connect.bind nativeNode
