@@ -23,3 +23,9 @@ if module.hot
     player.time = module.hot.data.time
 
 player.play()
+
+# in Chrome 39, you must store a reference to this object or the modulators will
+# get garbage collected and stop modulating. This does not happen in when using
+# webpack-dev-server because the module hot swapping code will hold a reference
+# to the current player object to prevent collection.
+window.player = player
