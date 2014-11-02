@@ -5,6 +5,7 @@ var mountFolder = function (connect, dir) {
 };
 
 var webpackDistConfig = require('./webpack.dist.config.js'),
+    webpackDemoConfig = require('./webpack.demo.config.js'),
     webpackDevConfig = require('./webpack.config.js');
 
 module.exports = function (grunt) {
@@ -18,11 +19,8 @@ module.exports = function (grunt) {
     pkg: pkgConfig,
 
     webpack: {
-      options: webpackDistConfig,
-
-      dist: {
-        cache: false
-      }
+      dist: webpackDistConfig,
+      demo: webpackDemoConfig
     },
 
     'webpack-dev-server': {
@@ -31,7 +29,7 @@ module.exports = function (grunt) {
         port: 8000,
         webpack: webpackDevConfig,
         publicPath: '/',
-        contentBase: './<%= pkg.src %>/',
+        contentBase: './src/',
       },
 
       start: {
@@ -73,21 +71,22 @@ module.exports = function (grunt) {
         files: [{
           dot: true,
           src: [
-            '<%= pkg.dist %>'
+            'dist',
+            'demo'
           ]
         }]
       }
     },
 
     coffeelint: {
-      src: ['src/scripts/**/*.coffee'],
+      src: ['src/**/*.coffee'],
       options: {
         configFile: 'coffeelint.json'
       }
     },
 
     coffee_jshint: {
-      src: ['src/scripts/**/*.coffee'],
+      src: ['src/**/*.coffee'],
       options: {
         jshintOptions: ['browser', 'node']
       }

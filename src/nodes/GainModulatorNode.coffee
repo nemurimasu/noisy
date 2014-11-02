@@ -1,5 +1,5 @@
 ConstantSourceNode = require './ConstantSourceNode'
-audioConfig = require './audioConfig'
+audioConfig = require '../audioConfig'
 
 Processor = (sampleRate) ->
   samples = 0

@@ -1,5 +1,5 @@
-jsSourceUtils = require './js-source-utils'
-audioConfig = require './audioConfig'
+jsSourceUtils = require '../js-source-utils'
+audioConfig = require '../audioConfig'
 
 class NoiseSourceNode
   constructor: (@context) ->

@@ -21,7 +21,7 @@ module.exports = {
   devtool: 'source-map',
   entry: [
     'webpack/hot/only-dev-server',
-    './src/scripts/components/<%= pkg.mainInput %>.coffee'
+    './src/demo.coffee'
   ],
 
   stats: {
@@ -31,7 +31,7 @@ module.exports = {
 
   resolve: {
     extensions: ['', '.js', '.coffee'],
-    modulesDirectories: ['web_modules', 'node_modules', 'src/bower_components']
+    modulesDirectories: ['web_modules', 'node_modules', 'bower_components']
   },
 
   module: {
@@ -53,7 +53,7 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
       title: 'Noisy',
-      template: 'src/index.html'
+      template: 'src/demo.html'
     })
   ]
 

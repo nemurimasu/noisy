@@ -4,9 +4,7 @@
   "description": "",
   "repository": "",
   "private": true,
-  "src": "src",
-  "dist": "dist",
-  "mainInput": "Demo",
+  "browser": "dist/noisy.min.js",
   "devDependencies": {
     "appcache-webpack-plugin": "^0.1.1",
     "coffee-loader": "^0.7.2",

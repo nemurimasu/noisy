@@ -1,6 +1,6 @@
-NoiseSourceNode = require './NoiseSourceNode'
-BinauralSourceNode = require './BinauralSourceNode'
-GainModulatorNode = require './GainModulatorNode'
+NoiseSourceNode = require '../nodes/NoiseSourceNode'
+BinauralSourceNode = require '../nodes/BinauralSourceNode'
+GainModulatorNode = require '../nodes/GainModulatorNode'
 
 class SelfHypnosis2
   constructor: (@context) ->
@@ -49,7 +49,6 @@ class SelfHypnosis2
     @binaural4Gain.gain.value = 0.25
 
   play: ->
-    console.log 'playing'
     @startClock = @context.currentTime
     startTime = @startClock - @time
 
@@ -93,7 +92,6 @@ class SelfHypnosis2
     @binaural4.start()
 
   stop: ->
-    console.log 'stopping'
     @time = @context.currentTime - @startClock
 
     @binaural.stop()

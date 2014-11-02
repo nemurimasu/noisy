@@ -1,6 +1,6 @@
-jsSourceUtils = require './js-source-utils'
+jsSourceUtils = require '../js-source-utils'
 ConstantSourceNode = require './ConstantSourceNode'
-audioConfig = require './audioConfig'
+audioConfig = require '../audioConfig'
 
 process = (audioProcessingEvent) ->
   audibleFrequencyValues = audioProcessingEvent.inputBuffer.getChannelData 0
