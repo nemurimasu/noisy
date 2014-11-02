@@ -7,7 +7,6 @@ var AppCachePlugin = require('appcache-webpack-plugin');
 module.exports = {
 
   output: {
-    publicPath: '/',
     path: 'dist/',
     filename: 'noisy.min.js',
     library: 'noisy',

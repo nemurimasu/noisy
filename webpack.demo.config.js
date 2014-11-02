@@ -13,7 +13,6 @@ var AppCachePlugin = require('appcache-webpack-plugin');
 module.exports = {
 
   output: {
-    publicPath: '/',
     path: 'dist/',
     filename: '[hash].js'
   },
