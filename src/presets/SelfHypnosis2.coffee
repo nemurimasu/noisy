@@ -5,7 +5,6 @@ GainModulatorNode = require '../nodes/GainModulatorNode'
 class SelfHypnosis2
   constructor: (@context) ->
     @time = 0
-    @plannedTime = 0
     @startClock = 0
     @volume = 0.125
 
