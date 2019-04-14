@@ -6,21 +6,18 @@
   "private": true,
   "browser": "dist/noisy.min.js",
   "devDependencies": {
-    "appcache-webpack-plugin": "^0.1.1",
-    "coffee-loader": "^0.7.2",
-    "coffee-script": "^1.8.0",
-    "exports-loader": "^0.6.2",
-    "grunt": "~0.4.5",
-    "grunt-coffee-jshint": "^0.2.1",
-    "grunt-coffeelint": "0.0.13",
-    "grunt-contrib-clean": "~0.6.0",
-    "grunt-contrib-connect": "~0.8.0",
-    "grunt-open": "~0.2.3",
-    "grunt-webpack": "~1.0.8",
-    "html-webpack-plugin": "^1.1.0",
-    "imports-loader": "^0.6.3",
-    "load-grunt-tasks": "~0.6.0",
-    "webpack": "~1.4.3",
-    "webpack-dev-server": "~1.6.5"
-  }
+    "npm-run-all": "^4.1.5",
+    "rollup": "^1.5.0",
+    "rollup-plugin-terser": "^4.0.4",
+    "serve": "^10.1.2"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -c -w",
+    "dev": "npm-run-all --parallel start watch",
+    "start": "serve dist"
+  },
+  "files": [
+    "dist"
+  ]
 }
